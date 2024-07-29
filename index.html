@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page with Background Image</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -78,6 +79,104 @@
             font-family: 'Arial', sans-serif; /* Font for paragraphs */
         }
 
+        /* About Me Page Styles */
+        .about-me {
+            background-color: #000; /* Set background color to black */
+            color: #fff; /* White text color for contrast */
+            padding: 40px 20px; /* Padding around the content */
+            min-height: 100vh; /* Full viewport height */
+            box-sizing: border-box; /* Ensures padding is included in the total height */
+        }
+
+        .about-me-content {
+            max-width: 800px; /* Sets a maximum width for readability */
+            margin: 100px auto 0 auto; /* Centers the content horizontally and pushes it down by 100px from the top */
+            text-align: center; /* Centers text within the content */
+        }
+
+        .about-me h1 {
+            font-size: 56px; /* Larger font size for heading */
+            font-weight: 700; /* Bold font weight */
+            margin-bottom: 20px; /* Adds space below the heading */
+            font-family: 'Arial', sans-serif; /* Font for heading */
+            position: relative; /* Relative positioning for pseudo-element */
+        }
+
+        .about-me h1::after {
+            content: '';
+            display: block;
+            width: 60px; /* Width of the underline */
+            height: 4px; /* Thickness of the underline */
+            background-color: #808080; /* Grey color for underline */
+            margin: 10px auto 0; /* Centers the underline and adds space above */
+        }
+
+        .about-me h3 {
+            font-size: 36px; /* Font size for the heading */
+            margin-bottom: 20px; /* Adds space below the heading */
+            position: relative; /* Relative positioning for pseudo-element */
+        }
+
+        .about-me h3::after {
+            content: '';
+            display: block;
+            width: 40px; /* Width of the underline */
+            height: 3px; /* Thickness of the underline */
+            background-color: #808080; /* Grey color for underline */
+            margin: 10px auto 0; /* Centers the underline and adds space above */
+        }
+
+        .about-me p {
+            font-size: 24px; /* Font size for paragraphs */
+            line-height: 1.6;
+            margin-bottom: 20px; /* Adds space below the paragraph */
+            font-family: 'Arial', sans-serif; /* Font for paragraphs */
+        }
+
+        .about-me .description {
+            font-size: 20px; /* Slightly smaller font size for additional description */
+            color: #ddd; /* Slightly lighter color for readability */
+        }
+
+        .key-skills {
+            margin-top: 40px; /* Adds space above the key skills section */
+        }
+
+        .key-skills h3 {
+            font-size: 36px; /* Font size for the heading */
+            margin-bottom: 20px; /* Adds space below the heading */
+            position: relative; /* Relative positioning for pseudo-element */
+        }
+
+        .key-skills h3::after {
+            content: '';
+            display: block;
+            width: 40px; /* Width of the underline */
+            height: 3px; /* Thickness of the underline */
+            background-color: #808080; /* Grey color for underline */
+            margin: 10px auto 0; /* Centers the underline and adds space above */
+        }
+
+        .skills-list {
+            list-style: none; /* Removes default list styling */
+            padding: 0;
+            font-size: 20px; /* Font size for skills */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+        }
+
+        .skills-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Adds space between items */
+        }
+
+        .skills-list i {
+            margin-right: 10px; /* Adds space between icon and text */
+            color: #fff; /* Icon color */
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .navbar {
@@ -107,6 +206,22 @@
             .home-content p {
                 font-size: 20px; /* Adjusted font size for paragraphs */
             }
+
+            .about-me {
+                padding: 40px 20px; /* Padding for smaller screens */
+            }
+
+            .about-me h1 {
+                font-size: 36px; /* Adjusted font size for heading */
+            }
+
+            .about-me p {
+                font-size: 18px; /* Adjusted font size for paragraphs */
+            }
+
+            .about-me .description {
+                font-size: 16px; /* Adjusted font size for description */
+            }
         }
     </style>
 </head>
@@ -130,7 +245,21 @@
         </div>
     </div>
 
-   
+    <div id="aboutme" class="about-me">
+        <div class="about-me-content">
+            <h1>About Me</h1>
+            <p>Hello, I'm M. GUNAESSAWAR</p>
+            <p class="description">I am a passionate BSc student specializing in Artificial Intelligence and Machine Learning. With a solid foundation in Python and hands-on experience in machine learning projects, I am eager to explore innovative solutions in the field of AI. My academic journey is complemented by skills in team management and problem-solving, aimed at making significant contributions to technology-driven projects.</p>
+            
+            <div class="key-skills">
+                <h3>Key Skills</h3>
+                <ul class="skills-list">
+                    <li><i class="fas fa-clock"></i> Time Management</li>
+                    <li><i class="fas fa-users"></i> Team Work</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
