@@ -3,236 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page with Background Image</title>
+    <title>Portfolio Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif; /* Base font family */
-        }
-
-        .navbar {
-            display: flex;
-            flex-wrap: wrap; /* Allows the navbar items to wrap on smaller screens */
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background for readability */
-            padding: 10px 20px;
-        }
-
-        .navbar-left .brand {
-            color: #fff;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font for brand */
-        }
-
-        .navbar-right {
-            display: flex;
-            flex-wrap: wrap; /* Allows links to wrap on smaller screens */
-        }
-
-        .navbar-right a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 18px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font for navbar links */
-        }
-
-        .navbar-right a:hover {
-            text-decoration: underline;
-        }
-
-        /* Home Page Specific Styles */
-        .home {
-            background-image: url("https://e0.pxfuel.com/wallpapers/235/155/desktop-wallpaper-gamer-keyboard-gaming-keyboard-and-mouse.jpg");
-            background-size: cover; /* Ensures the image covers the entire area */
-            background-position: center; /* Centers the image horizontally */
-            background-repeat: no-repeat; /* Prevents repeating the image */
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            align-items: center; /* Centers content vertically */
-            justify-content: center; /* Centers content horizontally */
-            color: #fff;
-            text-align: center;
-            padding: 20px; /* Adds padding around the content */
-            box-sizing: border-box; /* Ensures padding is included in the total height */
-        }
-
-        .home-content {
-            background: rgba(0, 0, 0, 0.5); /* Slightly opaque background for readability */
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners for the content */
-        }
-
-        .home-content h1 {
-            font-size: 48px; /* Larger font size for heading */
-            font-weight: 700; /* Bold font weight */
-            margin-bottom: 10px; /* Adds space below the heading */
-            font-family: 'Arial', sans-serif; /* Font for heading */
-        }
-
-        .home-content p {
-            font-size: 24px; /* Adjusted font size for paragraph */
-            font-family: 'Arial', sans-serif; /* Font for paragraphs */
-        }
-
-        /* About Me Page Styles */
-        .about-me {
-            background-color: #000; /* Set background color to black */
-            color: #fff; /* White text color for contrast */
-            padding: 40px 20px; /* Padding around the content */
-            min-height: 100vh; /* Full viewport height */
-            box-sizing: border-box; /* Ensures padding is included in the total height */
-        }
-
-        .about-me-content {
-            max-width: 800px; /* Sets a maximum width for readability */
-            margin: 100px auto 0 auto; /* Centers the content horizontally and pushes it down by 100px from the top */
-            text-align: center; /* Centers text within the content */
-        }
-
-        .about-me h1 {
-            font-size: 56px; /* Larger font size for heading */
-            font-weight: 700; /* Bold font weight */
-            margin-bottom: 20px; /* Adds space below the heading */
-            font-family: 'Arial', sans-serif; /* Font for heading */
-            position: relative; /* Relative positioning for pseudo-element */
-        }
-
-        .about-me h1::after {
-            content: '';
-            display: block;
-            width: 60px; /* Width of the underline */
-            height: 4px; /* Thickness of the underline */
-            background-color: #808080; /* Grey color for underline */
-            margin: 10px auto 0; /* Centers the underline and adds space above */
-        }
-
-        .about-me h3 {
-            font-size: 36px; /* Font size for the heading */
-            margin-bottom: 20px; /* Adds space below the heading */
-            position: relative; /* Relative positioning for pseudo-element */
-        }
-
-        .about-me h3::after {
-            content: '';
-            display: block;
-            width: 40px; /* Width of the underline */
-            height: 3px; /* Thickness of the underline */
-            background-color: #808080; /* Grey color for underline */
-            margin: 10px auto 0; /* Centers the underline and adds space above */
-        }
-
-        .about-me p {
-            font-size: 24px; /* Font size for paragraphs */
-            line-height: 1.6;
-            margin-bottom: 20px; /* Adds space below the paragraph */
-            font-family: 'Arial', sans-serif; /* Font for paragraphs */
-        }
-
-        .about-me .description {
-            font-size: 20px; /* Slightly smaller font size for additional description */
-            color: #ddd; /* Slightly lighter color for readability */
-        }
-
-        .key-skills {
-            margin-top: 40px; /* Adds space above the key skills section */
-        }
-
-        .key-skills h3 {
-            font-size: 36px; /* Font size for the heading */
-            margin-bottom: 20px; /* Adds space below the heading */
-            position: relative; /* Relative positioning for pseudo-element */
-        }
-
-        .key-skills h3::after {
-            content: '';
-            display: block;
-            width: 40px; /* Width of the underline */
-            height: 3px; /* Thickness of the underline */
-            background-color: #808080; /* Grey color for underline */
-            margin: 10px auto 0; /* Centers the underline and adds space above */
-        }
-
-        .skills-list {
-            list-style: none; /* Removes default list styling */
-            padding: 0;
-            font-size: 20px; /* Font size for skills */
-            display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items horizontally */
-        }
-
-        .skills-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px; /* Adds space between items */
-        }
-
-        .skills-list i {
-            margin-right: 10px; /* Adds space between icon and text */
-            color: #fff; /* Icon color */
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .navbar-right {
-                margin-top: 10px;
-            }
-
-            .navbar-right a {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .home-content {
-                max-width: 100%;
-                margin: 10px;
-                padding: 15px;
-            }
-
-            .home-content h1 {
-                font-size: 36px; /* Adjusted font size for heading */
-            }
-
-            .home-content p {
-                font-size: 20px; /* Adjusted font size for paragraphs */
-            }
-
-            .about-me {
-                padding: 40px 20px; /* Padding for smaller screens */
-            }
-
-            .about-me h1 {
-                font-size: 36px; /* Adjusted font size for heading */
-            }
-
-            .about-me p {
-                font-size: 18px; /* Adjusted font size for paragraphs */
-            }
-
-            .about-me .description {
-                font-size: 16px; /* Adjusted font size for description */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-left">
             <a href="#" class="brand">GUNAESSAWAR</a>
         </div>
-        <div class="navbar-right">
+        <div class="navbar-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navbar-right navbar-menu">
             <a href="#home">Home</a>
             <a href="#aboutme">About Me</a>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#contactme">Contact Me</a>
         </div>
@@ -249,17 +37,103 @@
         <div class="about-me-content">
             <h1>About Me</h1>
             <p>Hello, I'm M. GUNAESSAWAR</p>
-            <p class="description">I am a passionate BSc student specializing in Artificial Intelligence and Machine Learning. With a solid foundation in Python and hands-on experience in machine learning projects, I am eager to explore innovative solutions in the field of AI. My academic journey is complemented by skills in team management and problem-solving, aimed at making significant contributions to technology-driven projects.</p>
-            
-            <div class="key-skills">
-                <h3>Key Skills</h3>
-                <ul class="skills-list">
-                    <li><i class="fas fa-clock"></i> Time Management</li>
-                    <li><i class="fas fa-users"></i> Team Work</li>
-                </ul>
+            <p class="description">Third    year B.Sc. student specializing in Artificial Intelligence and Machine Learning at Hindusthan College of Arts and Science, Coimbatore. Alongside my studies, I have developed a keen interest in web development, particularly with HTML and CSS. I have built various projects using HTML and CSS, focusing on creating responsive and visually appealing websites. My passion for front-end development drives me to continuously learn and apply new techniques to enhance user experience and interface design.</p>
+        </div>
+    </div>
+
+    <div id="education" class="education-page">
+        <div class="education-content">
+            <h1>Education</h1>
+            <div class="education-item">
+                <h2>B.Sc. in Artificial Intelligence and Machine Learning</h2>
+                <p>Hindusthan College of Arts and Science, Coimbatore</p>
+                <p>Current Percentage: 69%</p>
+            </div>
+            <div class="education-item">
+                <h2>12th Grade</h2>
+                <p>Percentage: 66.5%</p>
+            </div>
+            <div class="education-item">
+                <h2>10th Grade</h2>
+                <p>Percentage: 75.8%</p>
             </div>
         </div>
     </div>
+
+    <div id="skills" class="skills-page">
+        <div class="skills-content">
+            <h1>Skills</h1>
+            <div class="skills-container">
+                <div class="skill-box">
+                    <i class="fab fa-html5"></i>
+                    <h4>HTML</h4>
+                    <p>Proficient in HTML, creating structured web pages with clean, semantic code for optimal user experience and accessibility.</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-css3-alt"></i>
+                    <h4>CSS</h4>
+                    <p>Experienced in CSS, designing visually appealing and well-organized layouts with precise styling for an engaging user experience.</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-git"></i>
+                    <h4>Git</h4>
+                    <p>Skilled in Git for version control, managing code changes, and collaborating effectively on projects with branching and merging strategies.</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-users"></i>
+                    <h4>Team Management</h4>
+                    <p>Experienced in leading and working within teams, fostering collaboration, and ensuring projects are completed successfully.</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-clock"></i>
+                    <h4>Time Management</h4>
+                    <p>Efficient in managing time effectively to balance multiple tasks and meet deadlines without compromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactme" class="contact-page">
+        <div class="contact-content">
+            <h1>Contact Me</h1>
+            <p>Get in Touch</p>
+            <p>Feel free to reach out to me via email or connect with me on social media.</p>
+            <div class="contact-details">
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <p><strong>Email:</strong> <a href="mailto:your-email@example.com" style="color: #fff;">gunaesswar46@gmail.com</a></p>
+                </div>
+                <div>
+                    <i class="fas fa-phone-alt"></i>
+                    <p><strong>Phone:</strong> <span style="color: #fff;">+91 9080410904</span></p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>Place:</strong> <span style="color: #fff;">Coimbatore, Tamil Nadu, India</span></p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://github.com/GUNAESSWAR1" target="_blank" class="fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/gunaesswar46/" target="_blank" class="fab fa-linkedin"></a>
+                <a href="mailto:gunaesswar46@gmail.com" class="fas fa-envelope"></a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 M. Gunaesswar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
-
